@@ -1,6 +1,6 @@
 # ros2_maze
 This repository is for ROS2 humble project. 
-Started from final lab in ECE7785 course, Georgia Tech but this is revised with NAV2 and TF2.
+Started from final lab in ECE7785 course(Georgia Tech), but this is revised with NAV2 and TF2.
 
 ## environment
 - ROS2 humble, gazebo, Turtlebot3
@@ -15,10 +15,11 @@ Started from final lab in ECE7785 course, Georgia Tech but this is revised with 
 1. ros2 launch turtlebot3_gazebo turtlebot3_maze.launch.py use_sim_time:=true
 2. ros2 launch turtlebot3_navigation2 navigation2.launch.py map:=$HOME/ros2_ws/map.yaml
 3. 2D pose estimation on rviz2
-3. ros2 run ros2_maze getObjectRange
-4. ros2 run ros2_maze imageClassifier
-5. ros2 run ros2_maze goToGoal
-(alternatively, 3-5 can be replaced with ros2 launch ros2_maze go.launch.py)
+4. ros2 run ros2_maze getObjectRange
+5. ros2 run ros2_maze imageClassifier
+6. ros2 run ros2_maze goToGoal
+
+(alternatively, 4-6 can be replaced with ros2 launch ros2_maze go.launch.py)
 
 ## description
 Turtlebot3 navigates the maze to get to the goal where each wall has a sign to let the robot know the direction to the goal.
@@ -36,7 +37,7 @@ Robots and goal coordination are converted with TF2.
 
 src/imageClassifier.py : from /camera/image_raw topic, classify an image when image_clasification service is requested
 
-src/getObjectRange.py : by subscribing /scan topic, this arranges the sequence of lidar data and handle NaN value. Preprocessed lidar data is published to object_range.
+src/getObjectRange.py : by subscribing /scan topic, this arranges the sequence of lidar data and handle NaN value. Preprocessed lidar data is published to object_range topic.
 
 resource/burger.yaml : navigation2 configuration file
 
